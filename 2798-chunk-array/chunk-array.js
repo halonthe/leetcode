@@ -5,13 +5,10 @@
  */
 var chunk = function(arr, size) {
     const chunked = []
-    let x = 0
-    let y = size
-
-    while(x < arr.length){
-        chunked.push(arr.slice(x, y))
-        x += size
-        y += size
+    
+    for(let i = 0; i < arr.length; i += size){
+        chunked.push(arr.slice(i, i + size))
     }
+
     return chunked
 };
